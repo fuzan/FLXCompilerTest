@@ -1,0 +1,19 @@
+package a;
+
+import external.*;
+import ddt.lang.*; 
+
+domain Domain {
+ 
+  variables: {
+  	public static Dinteger i = new Dinteger(0);
+  	public static Dinteger j = new Dinteger(1);
+  }  
+
+  events: {
+    Init;
+  }
+  resources: {
+    public static int ii;
+  }
+}

@@ -2,3 +2,15 @@
 /.project
 /.classpath
 /bin
+
+*.cof
+!DTTreeList.cof
+*.tmp
+
+src/flx_JavaLib.db
+
+src/flx_exceptionHierarchy.db
+
+src/flx_project.db
+
+src/compile/CompileSetting.java
