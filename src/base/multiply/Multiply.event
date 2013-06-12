@@ -1,0 +1,11 @@
+package base.multiply;
+
+public event Multiply{
+	int value;
+	public Multiply(int value){
+		this.value = value;
+	}
+	public int getValue(){
+		return value;
+	}
+}

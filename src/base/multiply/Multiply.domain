@@ -1,0 +1,14 @@
+package base.multiply;
+
+import external.*;
+import ddt.lang.*;
+import Resources.*;
+import base.*;
+
+domain Multiply extends Base{
+	
+	events: {
+		Multiply;
+	}
+	
+}
