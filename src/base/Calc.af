@@ -1,0 +1,22 @@
+package base;
+import external.*;
+import Resources.*;
+
+anchor feature Calc{
+	domain: Base;
+	
+	adding{
+		condition: all;
+		event: Add e;{
+			total.add(e.getValue());
+			st.setResult(total.intValue());
+		}
+	}
+	
+	exit{
+		condition: all;
+		event: Exit;{
+			st.finishes();	
+		}
+	}
+}

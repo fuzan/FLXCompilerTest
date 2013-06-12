@@ -1,0 +1,20 @@
+package base;
+
+import external.*;
+import ddt.lang.*;
+import Resources.*;
+
+domain Base {
+	variables: {
+		public static Dinteger total = new Dinteger(0);
+	}
+	
+	events: {
+		Add;
+		Exit;
+	}
+	
+	resources: {
+		public static SyncTool st;
+	}
+}

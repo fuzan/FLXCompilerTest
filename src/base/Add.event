@@ -1,0 +1,11 @@
+package base;
+
+public event Add{
+	int value;
+	public Add(int value){
+		this.value = value;
+	}
+	public int getValue(){
+		return value;
+	}
+}
