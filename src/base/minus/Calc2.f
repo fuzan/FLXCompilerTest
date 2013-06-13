@@ -9,7 +9,7 @@ feature Calc2{
 	domain: Minus;
 	anchor: Calc;
 	priorityPrecedence(Calc2,Calc);
-	multiplying{
+	minus{
 		condition: all;
 		event: Minus e;{
 			total.add(-e.getValue());
