@@ -1,6 +1,7 @@
 package base.printer.multiply;
 import external.*;
 import Resources.*;
+import Resources.ex.*;
 import base.*;
 import base.multiply.*;
 import base.printer.*;

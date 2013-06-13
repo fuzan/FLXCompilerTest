@@ -1,6 +1,7 @@
 package base.printer;
 import external.*;
 import Resources.*;
+import Resources.ex.*;
 import base.*;
 
 feature package CalcPrinterFP{

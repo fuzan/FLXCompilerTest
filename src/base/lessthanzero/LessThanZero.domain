@@ -1,0 +1,13 @@
+package base.lessthanzero;
+
+import external.*;
+import ddt.lang.*;
+import Resources.*;
+import Resources.ex.*;
+import base.*;
+
+domain LessThanZero extends Base {
+	exceptions:{
+		Resources.ex.LessThanZeroException;
+	}
+}

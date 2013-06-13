@@ -2,6 +2,9 @@ package Resources;
 
 import java.util.ArrayList;
 
+import Resources.ex.LessThanZeroException;
+import Resources.ex.OverHundredException;
+
 public class SyncTool {
 	private int result;
 	private Boolean finished = false;
@@ -11,7 +14,13 @@ public class SyncTool {
 		return result;
 	}
 
-	public void setResult(int result) {
+	public void setResult(int result) throws LessThanZeroException, OverHundredException {
+		if(result<0){
+			throw new LessThanZeroException();
+		}
+		if(result>100){
+			throw new OverHundredException();
+		}
 		this.result = result;
 	}
 

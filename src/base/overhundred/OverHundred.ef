@@ -1,0 +1,19 @@
+package base.overhundred;
+import external.*;
+import Resources.*;
+import Resources.ex.*;
+import base.*;
+
+exception feature OverHundred{
+	domain: OverHundred;
+	anchor: Calc;
+	handleAtAdd:resume{
+		context:{
+			condition: all;
+			event: base.Add;
+		};
+		exception: Resources.ex.OverHundredException;{
+			st.addStr("OverHundredException handled at Add");
+		}
+	}	
+}

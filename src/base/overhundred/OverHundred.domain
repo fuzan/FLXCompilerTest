@@ -1,0 +1,13 @@
+package base.overhundred;
+
+import external.*;
+import ddt.lang.*;
+import Resources.*;
+import Resources.ex.*;
+import base.*;
+
+domain OverHundred extends Base {
+	exceptions:{
+		Resources.ex.OverHundredException;
+	}
+}
