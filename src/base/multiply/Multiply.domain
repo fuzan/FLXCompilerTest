@@ -7,6 +7,11 @@ import base.*;
 
 domain Multiply extends Base{
 	
+	variables: {
+		public static Dinteger i = new Dinteger(0);
+		public static Dinteger j = new Dinteger(1);
+	}
+	
 	events: {
 		Multiply;
 	}

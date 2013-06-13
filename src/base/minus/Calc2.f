@@ -3,6 +3,7 @@ import external.*;
 import Resources.*;
 import Resources.ex.*;
 import base.*;
+import ddt.lang.*;
 
 feature Calc2{
 	domain: Minus;
@@ -15,4 +16,18 @@ feature Calc2{
 			st.setResult(total.intValue());
 		}
 	}	
+	
+	multipleDomain{
+		condition: i.equalsTo(j);
+		event: enter;{
+			System.out.println("test2");
+		}
+	}
+	
+	exit{
+		condition: all;
+		event: base.Exit;{
+			st.finishes();	
+		}
+	}
 }

@@ -3,6 +3,7 @@ import external.*;
 import Resources.*;
 import Resources.ex.*;
 import base.*;
+import ddt.lang.*;
 
 feature Calc1{
 	domain: Multiply;
@@ -21,8 +22,15 @@ feature Calc1{
 	
 	exit{
 		condition: all;
-		event: Exit;{
+		event: base.Exit;{
 			st.finishes();	
+		}
+	}
+	
+	multipleDomain{
+		condition: i.equalsTo(j);
+		event: enter;{
+			System.out.println("test");
 		}
 	}
 }

@@ -4,8 +4,14 @@ import external.*;
 import ddt.lang.*;
 import Resources.*;
 import base.*;
+import ddt.lang.*;
 
 domain Minus extends Base{
+	
+	variables: {
+		public static Dinteger i = new Dinteger(0);
+		public static Dinteger j = new Dinteger(1);
+	}
 	
 	events: {
 		Minus;
