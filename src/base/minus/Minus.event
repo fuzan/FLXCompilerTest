@@ -1,0 +1,11 @@
+package base.minus;
+
+public event Minus{
+	int value;
+	public Minus(int value){
+		this.value = value;
+	}
+	public int getValue(){
+		return value;
+	}
+}

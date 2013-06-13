@@ -1,11 +1,12 @@
-package base.multiply;
+package base.minus;
 
 import external.*;
 import ddt.lang.*;
 import Resources.*;
 import base.*;
+import ddt.lang.*;
 
-domain Multiply extends Base{
+domain Minus extends Base{
 	
 	variables: {
 		public static Dinteger i = new Dinteger(0);
@@ -13,7 +14,7 @@ domain Multiply extends Base{
 	}
 	
 	events: {
-		Multiply;
+		Minus;
 	}
 	
 }
