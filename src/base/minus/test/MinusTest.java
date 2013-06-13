@@ -25,11 +25,11 @@ public class MinusTest {
 	@Test
 	public void testMinus() {
 		SyncTool st = new SyncTool();
-		Calc2Feature f = new Calc2Feature(st);
+		Calc2Feature f = new Calc2Feature(null, st);
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Minus(5));
 		f.sendEvent(new Exit());
-		while(!st.isFinished()){
+		while (!st.isFinished()) {
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {

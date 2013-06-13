@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutorService;
 
 public class 
  MultipleDomainFeaturePackage
- extends BaseDomain  implements Serializable 
+ extends MinusDomain  implements Serializable 
 {
 CalcFeature _calcfeature;
 Calc2Feature _calc2feature;
@@ -29,7 +29,7 @@ public void activate() { activated = true; }
 public void deactivate() { activated = false; }
 public boolean isActivated() { return activated; }
 
-public MultipleDomainFeaturePackage(  SyncTool  st) {
+public MultipleDomainFeaturePackage(  SyncTool  st2 ,   SyncTool  st) {
 super();
 // write jEntered Here
 jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)" , false);
@@ -38,7 +38,8 @@ jEntered.put("minusdomain.i.equalsto(minusdomain.j)" , false);
 this._calcfeature = new CalcFeature();
 this._calc1feature = new Calc1Feature();
 this._calc2feature = new Calc2Feature();
-BaseDomain.st = st;
+MinusDomain.st2 = st2;
+MinusDomain.st = st;
 sharedBuffer = new EventBuffer<FL_EVENT_STEM>();
 threadExecuter = Executors.newCachedThreadPool();
 class Consumer implements Runnable{

@@ -27,7 +27,7 @@ public class MultipleDomainTest {
 	@Test
 	public void testAddingOnce() {
 		SyncTool st = new SyncTool();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(st);
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(null,st);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Exit());
@@ -44,7 +44,7 @@ public class MultipleDomainTest {
 	@Test
 	public void testMultiplying() {
 		SyncTool st = new SyncTool();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(st);
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(null,st);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Multiply(10));
@@ -62,7 +62,7 @@ public class MultipleDomainTest {
 	@Test
 	public void testMinus() {
 		SyncTool st = new SyncTool();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(st);
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(null,st);
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Minus(5));
 		f.sendEvent(new Exit());

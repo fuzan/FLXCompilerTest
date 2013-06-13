@@ -25,7 +25,7 @@ public class Printer2Test {
 	@Test
 	public void testAddingAndMultiplying() {
 		SyncTool st = new SyncTool();
-		CalcPrinter2FPFeaturePackage f = new CalcPrinter2FPFeaturePackage(st);
+		CalcPrinter2FPFeaturePackage f = new CalcPrinter2FPFeaturePackage(null,st);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Multiply(10));

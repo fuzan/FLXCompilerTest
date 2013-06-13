@@ -24,7 +24,7 @@ public class MultiplyTest {
 	@Test
 	public void testAdding() {
 		SyncTool st = new SyncTool();
-		Calc1Feature f = new Calc1Feature(st);
+		Calc1Feature f = new Calc1Feature(null,st);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Exit());
@@ -41,7 +41,7 @@ public class MultiplyTest {
 	@Test
 	public void testMultiplying() {
 		SyncTool st = new SyncTool();
-		Calc1Feature f = new Calc1Feature(st);
+		Calc1Feature f = new Calc1Feature(null,st);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Multiply(10));
