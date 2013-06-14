@@ -1,35 +1,32 @@
-package base.minus.test;
+package base.lessthanzero;
 
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import base.minus.Minus;
-
 import base.Add;
 import base.Exit;
-import base.minus.Calc2Feature;
+import base.lessthanzero.LessThanZeroFPFeaturePackage;
 
 import Resources.SyncTool;
 
 import compile.CompileSetting;
 
-public class MinusTest {
+public class ExceptionHandlingTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		CompileSetting.compileMinus();
+		CompileSetting.compileLessThanZero();
 	}
 
 	@Test
-	public void testMinus() {
+	public void testEH() {
 		SyncTool st = new SyncTool();
-		Calc2Feature f = new Calc2Feature(st);
-		f.sendEvent(new Add(10));
-		f.sendEvent(new Minus(5));
+		LessThanZeroFPFeaturePackage f = new LessThanZeroFPFeaturePackage(st);
+		f.sendEvent(new Add(-10));
 		f.sendEvent(new Exit());
-		while(!st.isFinished()){
+		while (!st.isFinished()) {
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
@@ -37,7 +34,7 @@ public class MinusTest {
 				e.printStackTrace();
 			}
 		}
-		assertEquals(5, st.getResult());
+		assertEquals("LessThanZeroException handled at Add", st.getStrs().get(0));
 	}
 
 }

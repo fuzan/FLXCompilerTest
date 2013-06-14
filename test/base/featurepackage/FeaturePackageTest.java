@@ -1,4 +1,4 @@
-package base.lessthanzero.test;
+package base.featurepackage;
 
 import static org.junit.Assert.*;
 
@@ -7,26 +7,26 @@ import org.junit.Test;
 
 import base.Add;
 import base.Exit;
-import base.lessthanzero.LessThanZeroFPFeaturePackage;
+import base.featurepackage.FPFeaturePackage;
 
 import Resources.SyncTool;
 
 import compile.CompileSetting;
 
-public class ExceptionHandlingTest {
+public class FeaturePackageTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		CompileSetting.compileLessThanZero();
+		CompileSetting.compileFP();
 	}
 
 	@Test
-	public void testEH() {
+	public void testFPPU() {
 		SyncTool st = new SyncTool();
-		LessThanZeroFPFeaturePackage f = new LessThanZeroFPFeaturePackage(st);
-		f.sendEvent(new Add(-10));
+		FPFeaturePackage f = new FPFeaturePackage(st);
+		f.sendEvent(new Add(0));
 		f.sendEvent(new Exit());
-		while (!st.isFinished()) {
+		while(!st.isFinished()){
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
@@ -34,7 +34,7 @@ public class ExceptionHandlingTest {
 				e.printStackTrace();
 			}
 		}
-		assertEquals("LessThanZeroException handled at Add", st.getStrs().get(0));
+		assertEquals("inserted by FP", st.getStrs().get(0));
 	}
 
 }

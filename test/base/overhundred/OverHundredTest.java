@@ -1,4 +1,4 @@
-package base.overhundred.test;
+package base.overhundred;
 
 import static org.junit.Assert.*;
 
