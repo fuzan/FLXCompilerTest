@@ -1,4 +1,4 @@
-package base.lessthanzero.test;
+package base.lessthanzero;
 
 import static org.junit.Assert.*;
 

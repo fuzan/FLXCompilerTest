@@ -1,35 +1,32 @@
-package base.minus.test;
+package base.featurepackage;
 
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import base.minus.Minus;
-
 import base.Add;
 import base.Exit;
-import base.minus.Calc2Feature;
+import base.featurepackage.FPFeaturePackage;
 
 import Resources.SyncTool;
 
 import compile.CompileSetting;
 
-public class MinusTest {
+public class FeaturePackageTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		CompileSetting.compileMinus();
+		CompileSetting.compileFP();
 	}
 
 	@Test
-	public void testMinus() {
+	public void testFPPU() {
 		SyncTool st = new SyncTool();
-		Calc2Feature f = new Calc2Feature(null, st);
-		f.sendEvent(new Add(10));
-		f.sendEvent(new Minus(5));
+		FPFeaturePackage f = new FPFeaturePackage(st);
+		f.sendEvent(new Add(0));
 		f.sendEvent(new Exit());
-		while (!st.isFinished()) {
+		while(!st.isFinished()){
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
@@ -37,7 +34,7 @@ public class MinusTest {
 				e.printStackTrace();
 			}
 		}
-		assertEquals(5, st.getResult());
+		assertEquals("inserted by FP", st.getStrs().get(0));
 	}
 
 }
