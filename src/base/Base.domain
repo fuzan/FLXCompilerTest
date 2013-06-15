@@ -7,6 +7,8 @@ import Resources.*;
 domain Base {
 	variables: {
 		public static Dinteger total = new Dinteger(0);
+		dtenum State{START,END}
+		DTenum state = State.START;
 	}
 	
 	events: {
