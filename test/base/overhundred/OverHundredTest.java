@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import Resources.R1;
 import Resources.SyncTool;
 import base.Add;
 import base.Exit;
@@ -23,7 +24,8 @@ public class OverHundredTest {
 	@Test
 	public void testResume() {
 		SyncTool st = new SyncTool();
-		OverHundredFPFeaturePackage f = new OverHundredFPFeaturePackage(st);
+		R1 r1 = new R1();
+		OverHundredFPFeaturePackage f = new OverHundredFPFeaturePackage(st,r1);
 		for (int i = 0; i < 10; i++) {
 			f.sendEvent(new Add(11));
 		}

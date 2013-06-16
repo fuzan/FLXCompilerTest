@@ -18,5 +18,6 @@ domain Base {
 	
 	resources: {
 		public static SyncTool st;
+		public static R1 r1;
 	}
 }

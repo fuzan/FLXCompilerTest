@@ -9,6 +9,7 @@ import base.Add;
 import base.Exit;
 import base.lessthanzero.LessThanZeroFPFeaturePackage;
 
+import Resources.R1;
 import Resources.SyncTool;
 
 import compile.CompileSetting;
@@ -23,7 +24,8 @@ public class ExceptionHandlingTest {
 	@Test
 	public void testEH() {
 		SyncTool st = new SyncTool();
-		LessThanZeroFPFeaturePackage f = new LessThanZeroFPFeaturePackage(st);
+		R1 r1 = new R1();
+		LessThanZeroFPFeaturePackage f = new LessThanZeroFPFeaturePackage(st,r1);
 		f.sendEvent(new Add(-10));
 		f.sendEvent(new Exit());
 		while (!st.isFinished()) {

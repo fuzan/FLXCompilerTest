@@ -18,7 +18,7 @@ domain Minus extends Base{
 	}
 	
 	resources:{
-		public static SyncTool st2;
+		public static R2 r2;
 	}
 	
 }

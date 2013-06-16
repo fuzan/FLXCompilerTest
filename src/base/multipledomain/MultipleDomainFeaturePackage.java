@@ -29,7 +29,7 @@ public void activate() { activated = true; }
 public void deactivate() { activated = false; }
 public boolean isActivated() { return activated; }
 
-public MultipleDomainFeaturePackage(  SyncTool  st2 ,   SyncTool  st) {
+public MultipleDomainFeaturePackage(  R2  r2 ,   SyncTool  st ,   R1  r1) {
 super();
 // write jEntered Here
 jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)" , false);
@@ -38,7 +38,8 @@ jEntered.put("minusdomain.i.equalsto(minusdomain.j)" , false);
 this._calcfeature = new CalcFeature();
 this._calc1feature = new Calc1Feature();
 this._calc2feature = new Calc2Feature();
-MinusDomain.st2 = st2;
+MinusDomain.r2 = r2;
+MinusDomain.r1 = r1;
 MinusDomain.st = st;
 sharedBuffer = new EventBuffer<FL_EVENT_STEM>();
 threadExecuter = Executors.newCachedThreadPool();

@@ -17,6 +17,6 @@ domain Multiply extends Base{
 	}
 	
 	resources: {
-		public static SyncTool st3;
+		public static R3 r3;
 	}
 }

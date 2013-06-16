@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import Resources.R1;
 import Resources.SyncTool;
 import base.Add;
 import base.CalcFeature;
@@ -22,7 +23,8 @@ public class BaseTest {
 	@Test
 	public void testAddingOnce() {
 		SyncTool st = new SyncTool();
-		CalcFeature f = new CalcFeature(st);
+		R1 r1 = new R1();
+		CalcFeature f = new CalcFeature(st, r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Exit());
@@ -39,7 +41,8 @@ public class BaseTest {
 	@Test
 	public void testAddingTwice() {
 		SyncTool st = new SyncTool();
-		CalcFeature f = new CalcFeature(st);
+		R1 r1 = new R1();
+		CalcFeature f = new CalcFeature(st, r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Add(10));
@@ -57,7 +60,8 @@ public class BaseTest {
 	@Test
 	public void testAdding1to10() {
 		SyncTool st = new SyncTool();
-		CalcFeature f = new CalcFeature(st);
+		R1 r1 = new R1();
+		CalcFeature f = new CalcFeature(st, r1);
 		st.starts();
 		for (int i = 1; i <= 10; i++) {
 			f.sendEvent(new Add(i));

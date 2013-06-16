@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import Resources.R1;
+import Resources.R2;
 import Resources.SyncTool;
 import base.Add;
 import base.CalcFeature;
@@ -27,7 +29,9 @@ public class MultipleDomainTest {
 	@Test
 	public void testAddingOnce() {
 		SyncTool st = new SyncTool();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(null,st);
+		R1 r1 = new R1();
+		R2 r2 = new R2();
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(r2,st,r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Exit());
@@ -44,7 +48,9 @@ public class MultipleDomainTest {
 	@Test
 	public void testMultiplying() {
 		SyncTool st = new SyncTool();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(null,st);
+		R1 r1 = new R1();
+		R2 r2 = new R2();
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(r2,st,r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Multiply(10));
@@ -62,7 +68,9 @@ public class MultipleDomainTest {
 	@Test
 	public void testMinus() {
 		SyncTool st = new SyncTool();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(null,st);
+		R1 r1 = new R1();
+		R2 r2 = new R2();
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(r2,st,r1);
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Minus(5));
 		f.sendEvent(new Exit());

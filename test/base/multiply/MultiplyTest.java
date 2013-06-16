@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import Resources.R1;
+import Resources.R3;
 import Resources.SyncTool;
 import base.Add;
 import base.CalcFeature;
@@ -24,7 +26,9 @@ public class MultiplyTest {
 	@Test
 	public void testAdding() {
 		SyncTool st = new SyncTool();
-		Calc1Feature f = new Calc1Feature(null,st);
+		R1 r1 = new R1();
+		R3 r3 = new R3();
+		Calc1Feature f = new Calc1Feature(r3,st,r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Exit());
@@ -41,7 +45,9 @@ public class MultiplyTest {
 	@Test
 	public void testMultiplying() {
 		SyncTool st = new SyncTool();
-		Calc1Feature f = new Calc1Feature(null,st);
+		R1 r1 = new R1();
+		R3 r3 = new R3();
+		Calc1Feature f = new Calc1Feature(r3,st,r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Multiply(10));

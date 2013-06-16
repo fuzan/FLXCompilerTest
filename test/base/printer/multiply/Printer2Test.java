@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import Resources.R1;
+import Resources.R3;
 import Resources.SyncTool;
 import base.Add;
 import base.Exit;
@@ -25,7 +27,9 @@ public class Printer2Test {
 	@Test
 	public void testAddingAndMultiplying() {
 		SyncTool st = new SyncTool();
-		CalcPrinter2FPFeaturePackage f = new CalcPrinter2FPFeaturePackage(null,st);
+		R3 r3 = new R3();
+		R1 r1 = new R1();
+		CalcPrinter2FPFeaturePackage f = new CalcPrinter2FPFeaturePackage(r3,st,r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Multiply(10));

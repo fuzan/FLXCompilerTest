@@ -11,6 +11,8 @@ import base.Add;
 import base.Exit;
 import base.minus.Calc2Feature;
 
+import Resources.R1;
+import Resources.R2;
 import Resources.SyncTool;
 
 import compile.CompileSetting;
@@ -25,7 +27,9 @@ public class MinusTest {
 	@Test
 	public void testMinus() {
 		SyncTool st = new SyncTool();
-		Calc2Feature f = new Calc2Feature(null, st);
+		R1 r1 = new  R1();
+		R2 r2 = new R2();
+		Calc2Feature f = new Calc2Feature(r2, st, r1);
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Minus(5));
 		f.sendEvent(new Exit());
