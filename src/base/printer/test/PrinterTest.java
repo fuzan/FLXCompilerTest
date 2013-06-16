@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import compile.CompileSetting;
+
+import Resources.R1;
 import Resources.SyncTool;
 import base.Add;
 import base.CalcFeature;
@@ -15,12 +18,14 @@ public class PrinterTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		CompileSetting.compilePrinter();
 	}
 
 	@Test
 	public void testAddingOnce() {
 		SyncTool st = new SyncTool();
-		CalcPrinterFPFeaturePackage f = new CalcPrinterFPFeaturePackage(st);
+		R1 r1 = new R1();
+		CalcPrinterFPFeaturePackage f = new CalcPrinterFPFeaturePackage(st,r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Exit());
@@ -39,8 +44,9 @@ public class PrinterTest {
 	@Test
 	public void testAddingTwice() {
 		SyncTool st = new SyncTool();
-		CalcPrinterFPFeaturePackage f = new CalcPrinterFPFeaturePackage(st);
-		st.starts();
+		R1 r1 = new R1();
+		CalcPrinterFPFeaturePackage f = new CalcPrinterFPFeaturePackage(st,r1);
+			st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Exit());
