@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import Resources.R1;
 import Resources.R2;
+import Resources.R3;
 import Resources.SyncTool;
 import base.Add;
 import base.CalcFeature;
@@ -31,7 +32,8 @@ public class MultipleDomainTest {
 		SyncTool st = new SyncTool();
 		R1 r1 = new R1();
 		R2 r2 = new R2();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(r2,st,r1);
+		R3 r3 = new R3();
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(st, r1, r2, r3);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Exit());
@@ -50,7 +52,8 @@ public class MultipleDomainTest {
 		SyncTool st = new SyncTool();
 		R1 r1 = new R1();
 		R2 r2 = new R2();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(r2,st,r1);
+		R3 r3 = new R3();
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(st, r1, r2, r3);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Multiply(10));
@@ -70,8 +73,9 @@ public class MultipleDomainTest {
 		SyncTool st = new SyncTool();
 		R1 r1 = new R1();
 		R2 r2 = new R2();
-		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(r2,st,r1);
-		f.sendEvent(new Add(10));
+		R3 r3 = new R3();
+		MultipleDomainFeaturePackage f = new MultipleDomainFeaturePackage(st, r1, r2, r3);
+			f.sendEvent(new Add(10));
 		f.sendEvent(new Minus(5));
 		f.sendEvent(new Exit());
 		while (!st.isFinished()) {
