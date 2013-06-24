@@ -1,0 +1,13 @@
+package d1.ef;
+
+import external.*;
+import ddt.lang.*;
+import Resources.*;
+import Resources.ex.*;
+import d1.*;
+
+domain EF extends D1{
+	exceptions:{
+		Resources.ex.MyException;
+	}
+}

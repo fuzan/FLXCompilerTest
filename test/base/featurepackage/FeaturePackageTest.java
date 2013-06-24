@@ -25,7 +25,7 @@ public class FeaturePackageTest {
 	public void testFPPU() {
 		SyncTool st = new SyncTool();
 		R1 r1 = new R1();
-		FPFeaturePackage f = new FPFeaturePackage(st,r1);
+		FPFeaturePackage f = new FPFeaturePackage(st, r1);
 		f.sendEvent(new Add(0));
 		f.sendEvent(new Exit());
 		while(!st.isFinished()){

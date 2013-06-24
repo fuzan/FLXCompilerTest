@@ -1,0 +1,29 @@
+package d1;
+import external.*;
+import Resources.*;
+
+anchor feature AF{
+	domain: D1;
+	
+	pu1{
+		condition: s.equalsToConstant(S.S1);
+		event: E1;{
+			r1.throwEx();
+			System.out.println(r1);
+		}
+	}
+	
+	pu2{
+		condition: s.equalsToConstant(S.S2);
+		event: E1;{
+			System.out.println(r1);
+		}
+	}
+	
+	pu3{
+		condition: s.equalsToConstant(S.S1);
+		event: E2;{
+			System.out.println(r1);
+		}
+	}
+}

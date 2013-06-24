@@ -1,0 +1,19 @@
+package d1.ef;
+import external.*;
+import Resources.*;
+import Resources.ex.*;
+import d1.*;
+
+exception feature ExceptionHandler{
+	domain: EF;
+	anchor: AF;
+	handler/*:resume*/{
+		context:{
+			condition: all;
+			event: d1.E1;
+		};
+		exception: Resources.ex.MyException;{
+			System.out.println("Exception is handled in EH");
+		}
+	}	
+}

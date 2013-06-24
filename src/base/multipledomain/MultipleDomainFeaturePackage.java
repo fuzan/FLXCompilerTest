@@ -12,10 +12,10 @@ import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 
-public class 
- MultipleDomainFeaturePackage
+public class MultipleDomainFeaturePackage
  implements Serializable 
 {
+
 CalcFeature _calcfeature;
 Calc2Feature _calc2feature;
 Calc1Feature _calc1feature;
@@ -31,13 +31,6 @@ public boolean isActivated() { return activated; }
 
 public MultipleDomainFeaturePackage(  SyncTool  st ,   R1  r1 ,   R2  r2 ,   R3  r3) {
 super();
-// write jEntered Here
-jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)" , false);
-jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)" , false);
-jEntered.put("minusdomain.i.equalsto(minusdomain.j)" , false);
-this._calcfeature = new CalcFeature();
-this._calc1feature = new Calc1Feature();
-this._calc2feature = new Calc2Feature();
 MinusDomain.r1 = r1;
 BaseDomain.r1 = r1;
 MinusDomain.st = st;
@@ -46,6 +39,13 @@ MultiplyDomain.r3 = r3;
 MultiplyDomain.r1 = r1;
 MultiplyDomain.st = st;
 MinusDomain.r2 = r2;
+// write jEntered Here
+jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)" , false);
+jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)" , false);
+jEntered.put("minusdomain.i.equalsto(minusdomain.j)" , false);
+this._calcfeature = new CalcFeature();
+this._calc1feature = new Calc1Feature();
+this._calc2feature = new Calc2Feature();
 sharedBuffer = new EventBuffer<FL_EVENT_STEM>();
 threadExecuter = Executors.newCachedThreadPool();
 class Consumer implements Runnable{
@@ -56,7 +56,7 @@ this.buffer = buffer;
 public void run() {
 while(true){
 try{
-MultipleDomainFeaturePackage.this.XEvent((FL_EVENT_STEM)buffer.remove());
+MultipleDomainFeaturePackage.this.XEvent(buffer.remove());
 }catch(Exception ex){
 ex.printStackTrace();
 }//end of catch
@@ -66,7 +66,7 @@ ex.printStackTrace();
 Consumer consumer = new Consumer(sharedBuffer);
 threadExecuter.execute(consumer);
 }
-public  MultipleDomainFeaturePackage(CalcFeature _calcfeature, Calc1Feature _calc1feature, Calc2Feature _calc2feature)
+public MultipleDomainFeaturePackage(CalcFeature _calcfeature, Calc1Feature _calc1feature, Calc2Feature _calc2feature)
  {
 super();
 // write jEntered Here
@@ -79,29 +79,29 @@ this._calc2feature = _calc2feature;
 }
 
 public synchronized  void sendEvent( FL_EVENT_STEM e ) {
-	sharedBuffer.add(e);
+sharedBuffer.add(e);
 }
 public synchronized void XEvent( FL_EVENT_STEM e )
 {
 
-	if(activated) {
+if(activated) {
 // write pConditions Here
-		if ( e instanceof Exit) {
-			{
-			if (true&&true&&true)
-			{_calc2feature.exit((Exit) e);
+if ( e instanceof Exit) {
+{
+if (true&&true&&true)
+{_calc2feature.exit((Exit) e);
 _calc1feature.exit((Exit) e);
 _calcfeature.exit((Exit) e);
-			}
+}
 
-			}
-			}
-		else if ( e instanceof Add) {
-			{
-			if (true)
-			{try {// for default
-			_calcfeature._calc_adding_setresult_resources_ex_overhundredexception = null;_calcfeature._calc_adding_setresult_resources_ex_lessthanzeroexception = null;_calcfeature.adding((Add) e);
-			}//for default hander
+}
+}
+else if ( e instanceof Add) {
+{
+if (true)
+{try {// for default
+_calcfeature._calc_adding_setresult_resources_ex_overhundredexception = null;_calcfeature._calc_adding_setresult_resources_ex_lessthanzeroexception = null;_calcfeature.adding((Add) e);
+}//for default hander
 catch(LessThanZeroException exception)
 {
 DefaultExceptionHandler defaultExceptionHandler=new DefaultExceptionHandler();
@@ -122,16 +122,16 @@ defaultExceptionHandler.setEventName("base.Add");
 defaultExceptionHandler.setExceptionName("OverHundredException");
 defaultExceptionHandler.printException();
 }
-			}
+}
 
-			}
-			}
-		else if ( e instanceof Minus) {
-			{
-			if (true)
-			{try {// for default
-			_calc2feature.minus((Minus) e);
-			}//for default hander
+}
+}
+else if ( e instanceof Minus) {
+{
+if (true)
+{try {// for default
+_calc2feature._calc2_minus_setresult_resources_ex_overhundredexception = null;_calc2feature._calc2_minus_setresult_resources_ex_lessthanzeroexception = null;_calc2feature.minus((Minus) e);
+}//for default hander
 catch(LessThanZeroException exception)
 {
 DefaultExceptionHandler defaultExceptionHandler=new DefaultExceptionHandler();
@@ -152,16 +152,16 @@ defaultExceptionHandler.setEventName("minus.Minus");
 defaultExceptionHandler.setExceptionName("OverHundredException");
 defaultExceptionHandler.printException();
 }
-			}
+}
 
-			}
-			}
-		else if ( e instanceof Multiply) {
-			{
-			if (true)
-			{try {// for default
-			_calc1feature.multiplying((Multiply) e);
-			}//for default hander
+}
+}
+else if ( e instanceof Multiply) {
+{
+if (true)
+{try {// for default
+_calc1feature._calc1_multiplying_setresult_resources_ex_lessthanzeroexception = null;_calc1feature._calc1_multiplying_setresult_resources_ex_overhundredexception = null;_calc1feature.multiplying((Multiply) e);
+}//for default hander
 catch(LessThanZeroException exception)
 {
 DefaultExceptionHandler defaultExceptionHandler=new DefaultExceptionHandler();
@@ -182,10 +182,10 @@ defaultExceptionHandler.setEventName("multiply.Multiply");
 defaultExceptionHandler.setExceptionName("OverHundredException");
 defaultExceptionHandler.printException();
 }
-			}
+}
 
-			}
-			}
+}
+}
 // write jEntered Here
 if(!MinusDomain.i.equalsTo(MinusDomain.j)&&MultiplyDomain.i.equalsTo(MultiplyDomain.j))
 jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)" , false);
@@ -203,22 +203,22 @@ if(!MultiplyDomain.i.equalsTo(MultiplyDomain.j))
 jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)" , false);
 if(!MinusDomain.i.equalsTo(MinusDomain.j))
 jEntered.put("minusdomain.i.equalsto(minusdomain.j)" , false);
-			{
-			if (!jEntered.get("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)")&&MinusDomain.i.equalsTo(MinusDomain.j)&&MultiplyDomain.i.equalsTo(MultiplyDomain.j))
-			{				noEnterEvent = false;_calc2feature.multipleDomain(e);
+{
+if (!jEntered.get("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)")&&MinusDomain.i.equalsTo(MinusDomain.j)&&MultiplyDomain.i.equalsTo(MultiplyDomain.j))
+{noLeaveEvent = false;_calc2feature.multipleDomain(e);
 jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)" , MultiplyDomain.i.equalsTo(MultiplyDomain.j)&&MinusDomain.i.equalsTo(MinusDomain.j));_calc1feature.multipleDomain(e);
-jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)" , MultiplyDomain.i.equalsTo(MultiplyDomain.j)&&MinusDomain.i.equalsTo(MinusDomain.j));			}
-			else if (!jEntered.get("multiplydomain.i.equalsto(multiplydomain.j)")&&MultiplyDomain.i.equalsTo(MultiplyDomain.j))
-			{				noEnterEvent = false;_calc1feature.multipleDomain(e);
-jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)" , MultiplyDomain.i.equalsTo(MultiplyDomain.j));			}
-			else if (!jEntered.get("minusdomain.i.equalsto(minusdomain.j)")&&MinusDomain.i.equalsTo(MinusDomain.j))
-			{				noEnterEvent = false;_calc2feature.multipleDomain(e);
-jEntered.put("minusdomain.i.equalsto(minusdomain.j)" , MinusDomain.i.equalsTo(MinusDomain.j));			}
+jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)&&minusdomain.i.equalsto(minusdomain.j)" , MultiplyDomain.i.equalsTo(MultiplyDomain.j)&&MinusDomain.i.equalsTo(MinusDomain.j));}
+else if (!jEntered.get("multiplydomain.i.equalsto(multiplydomain.j)")&&MultiplyDomain.i.equalsTo(MultiplyDomain.j))
+{noLeaveEvent = false;_calc1feature.multipleDomain(e);
+jEntered.put("multiplydomain.i.equalsto(multiplydomain.j)" , MultiplyDomain.i.equalsTo(MultiplyDomain.j));}
+else if (!jEntered.get("minusdomain.i.equalsto(minusdomain.j)")&&MinusDomain.i.equalsTo(MinusDomain.j))
+{noLeaveEvent = false;_calc2feature.multipleDomain(e);
+jEntered.put("minusdomain.i.equalsto(minusdomain.j)" , MinusDomain.i.equalsTo(MinusDomain.j));}
 
-			}
+}
 if(noLeaveEvent && noEnterEvent) break;
 }
-	}
+}
 
 }
 
@@ -229,8 +229,8 @@ super.finalize();
 // do nothing
 }
 }
-
 }
+
 /* IntermediateInfo:FeatureInteractionTable*************
 ¬í sr "core.table.FeatureInteractionTable¤VôéÚ6Læ Z 
 emptyTableZ isFeatureNameSetL 

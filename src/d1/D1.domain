@@ -1,0 +1,22 @@
+package d1;
+
+import external.*;
+import ddt.lang.*;
+import Resources.*;
+
+domain D1 {
+	variables: {
+		public static Dinteger total = new Dinteger(0);
+		dtenum S{S1,S2,S3,S4}
+		public static DTenum s = S.S1;
+	}
+	
+	events: {
+		E1;
+		E2;
+	}
+	
+	resources: {
+		public static R1 r1;
+	}
+}

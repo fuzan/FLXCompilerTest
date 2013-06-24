@@ -29,7 +29,8 @@ public class Printer2Test {
 		SyncTool st = new SyncTool();
 		R3 r3 = new R3();
 		R1 r1 = new R1();
-		CalcPrinter2FPFeaturePackage f = new CalcPrinter2FPFeaturePackage(r3,st,r1);
+		CalcPrinter2FPFeaturePackage f = new CalcPrinter2FPFeaturePackage(r3,
+				st, r1);
 		st.starts();
 		f.sendEvent(new Add(10));
 		f.sendEvent(new Multiply(10));

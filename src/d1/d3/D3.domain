@@ -1,0 +1,17 @@
+package d1.d3;
+
+import external.*;
+import ddt.lang.*;
+import Resources.*;
+import d1.*;
+
+domain D3 extends D1 {
+	
+	events: {
+		E4;
+	}
+	
+	resources: {
+		public static R3 r3;
+	}
+}
